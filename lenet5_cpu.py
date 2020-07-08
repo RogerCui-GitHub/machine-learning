@@ -14,7 +14,7 @@ import torchvision.transforms
 
 #from torch import np  # this is torch's wrapper for numpy
 import numpy as np
-from matplotlib import pyplot
+import matplotlib.pyplot as plt
 from matplotlib.pyplot import subplot
 from sklearn.metrics import accuracy_score
 
@@ -63,11 +63,11 @@ fig1 = train.data[0].numpy()
 fig2 = train.data[2500].numpy()
 fig3 = train.data[25000].numpy()
 fig4 = train.data[59999].numpy()
-subplot(2, 2, 1), pyplot.imshow(fig1)
-subplot(2, 2, 2), pyplot.imshow(fig2)
-subplot(2, 2, 3), pyplot.imshow(fig3)
-subplot(2, 2, 4), pyplot.imshow(fig4)
-pyplot.show()
+subplot(2, 2, 1), plt.imshow(fig1)
+subplot(2, 2, 2), plt.imshow(fig2)
+subplot(2, 2, 3), plt.imshow(fig3)
+subplot(2, 2, 4), plt.imshow(fig4)
+plt.show()
 
 # In[9]:
 
@@ -207,16 +207,16 @@ for epoch in range(numEpochs):
 epochs = list(range(numEpochs))
 
 # plotting training and validation accuracies
-fig2 = pyplot.figure()
-pyplot.plot(epochs, training_accuracy, 'r')
-pyplot.plot(epochs, validation_accuracy, 'g')
+fig2 = plt.figure()
+plt.plot(epochs, training_accuracy, 'r')
+plt.plot(epochs, validation_accuracy, 'g')
 for a, b in zip(epochs, training_accuracy):
-    pyplot.text(a, b, round(b,3), ha='center', va='top', fontsize=10)
+    plt.text(a, b, round(b,3), ha='center', va='top', fontsize=10)
 for a, b in zip(epochs, validation_accuracy):
-    pyplot.text(a, b, round(b,3), ha='center', va='top', fontsize=10)
-pyplot.xlabel("Epochs")
-pyplot.ylabel("Accuracy")
-pyplot.show()
+    plt.text(a, b, round(b,3), ha='center', va='top', fontsize=10)
+plt.xlabel("Epochs")
+plt.ylabel("Accuracy")
+plt.show()
 
 
 # In[14]:
